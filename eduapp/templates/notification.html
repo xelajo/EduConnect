@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Add Notification</title>
+        <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+/* Styling for the heading */
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: -30px; /* Adjust the top margin to position it nicely above the form */
+}
+
+/* Form container */
+form {
+    background: #fff;
+    padding: 20px 30px;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for form paragraphs that contain fields */
+form p {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+form label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form select,
+form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    width: 100%;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s;
+}
+
+form select {
+    appearance: none;
+}
+
+form input[type="text"]:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Additional styling for dropdown fields */
+form select {
+    background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ccc'><path d='M4 6l4 4 4-4'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 16px;
+    padding-right: 30px;
+}
+    </style>
+    </head>
+    <body>
+        <h1>Add Notifications</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>

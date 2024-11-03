@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>table</title>
+    </head>
+    <body>
+        <table align="center" border="1">
+        <tr>
+            <th>subject</th>
+            <th>topic</th>
+            <th>uploadnote</th>
+            <th>department</th>
+            <th>semester</th>
+            </tr>
+            {% for d in datas %}
+            <tr>
+                <td>{{d.subject}}</td>
+                <td>{{d.topic}}</td>
+                <td>{{d.uploadnotes}}</td>
+                <td>{{d.department}}</td>
+                <td>{{d.semester}}</td>
+                <td><a href="{% url 'notedeletedata' pk=d.noteupload_id %}">Delete</a></td>
+                <td><a href="{% url 'noteditdata' pk=d.noteupload_id %}">Edit</a></td>
+            </tr>
+            {% endfor %}
+            </table>
+    </body>
+</html>

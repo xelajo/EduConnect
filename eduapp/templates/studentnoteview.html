@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>table</title>
+    </head>
+    <body>
+        {% include 'studentsearch.html' %}
+        {% if data %}
+        <table align="center" border="1">
+        <tr>
+            <th>subject</th>
+            <th>topic</th>
+            <th>uploadnotes</th>
+            </tr>
+            {% for d in b %}
+            <tr>
+                <td>{{d.subject}}</td>
+                <td>{{d.topic}}</td>
+                <td>{{d.uploadnotes}}</td>
+                
+            </tr>
+            {% endfor %}
+            </table>
+            {% else %}
+            <p>not found</p>
+            {% endif %}
+    </body>
+</html>

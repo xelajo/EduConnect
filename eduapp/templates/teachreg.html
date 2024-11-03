@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Teacher Registration</title>
+        <style>
+           body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 20px;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 60px; /* Adjust the margin to position below the heading */
+}
+
+form p {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+form label {
+    width: 30%;
+    text-align: right;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+form input, form select {
+    width: 65%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form input[type="radio"] {
+    margin-right: 5px; /* Reduce the margin between the radio button and the label */
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+form input[type="radio"] {
+    margin-right: 5px; /* Reduce the margin between the radio button and the label */
+}
+
+        </style>
+    </head>
+    <body>
+        <h1>Registration</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Register</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<title>Login to EduConnect</title>
+
+	<!-- Meta tags -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<!-- Style -->
+	<link rel="stylesheet" href="{% static 'login/css/style.css' %}" type="text/css" media="all" />
+</head>
+
+<body>
+	<!-- login form -->
+	<section class="w3l-login">
+		<div class="overlay">
+			<div class="wrapper">
+				<div class="logo">
+					<a class="brand-logo" href="index.html">Welcome</a>
+				</div>
+				<div class="form-section">
+					<h3>Login</h3>
+					<h6>To continue with Us</h6>
+					<form action="" method="post" class="signin-form">
+						<form action="" method="post" class="signin-form">
+							{% csrf_token %}
+							<div class="form-group">
+								<label for="id_email">Email</label>
+								{{ form.email }}
+							</div>
+							<div class="form-group">
+								<label for="id_password">Password</label>
+								{{ form.password }}
+							</div>
+						
+							<label class="check-remaind">
+								<input type="checkbox">
+								<span class="checkmark"></span>
+								<p class="remember">Remember me</p>
+							</label>
+						
+							<button type="submit" class="btn btn-primary theme-button mt-4">Log in</button>
+							
+							<div class="new-signup">
+								<a href="#reload" class="signuplink">Forgot username or password?</a>
+							</div>
+						</form>
+						<p class="signup">Don’t have an account yet? <a href="#signup.html" class="signuplink">Sign Up</a></p>
+						
+				</div>
+			</div>
+		</div>
+		<div id='stars'></div>
+		<div id='stars2'></div>
+		<div id='stars3'></div>
+
+		<!-- copyright -->
+		<div class="copy-right">
+			<p>&copy; EduConnect - 2024</p>
+		</div>
+		<!-- //copyright -->
+	</section>
+
+	<!-- /login form -->
+</body>
+
+</html>

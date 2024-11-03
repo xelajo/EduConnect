@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>table</title>
+    </head>
+    <body>
+        {% include 'teacherstudentsearch.html' %}
+        {% if data %}
+        <table align="center" border="1">
+        <tr>
+            <th>photo</th>
+            <th>admno</th>
+            <th>name</th>
+            <th>parentname</th>
+            <th>department</th>
+            <th>semester</th>
+            </tr>
+            {% for d in b %}
+            <tr>
+                <td>{{d.photo}}</td>
+                <td>{{d.admno}}</td>
+                <td>{{d.name}}</td>
+                <td>{{d.department}}</td>
+                <td>{{d.semester}}</td>
+                v
+                
+            </tr>
+            {% endfor %}
+            </table>
+            {% else %}
+            <p>not found</p>
+            {% endif %}
+    </body>
+</html>

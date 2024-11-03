@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>table</title>
+    </head>
+    <body>
+        <table align="center" border="1">
+        <tr>
+            <th>department</th>
+            <th>semester</th>
+            <th>notification</th>
+            </tr>
+            {% for d in datas %}
+            <tr>
+                <td>{{d.department}}</td>
+                <td>{{d.semester}}</td>
+                <td>{{d.notification}}</td>
+                
+            </tr>
+            {% endfor %}
+            </table>
+    </body>
+</html>
